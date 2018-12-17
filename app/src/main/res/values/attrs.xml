@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PagerHeadStrip">
+        <attr name="mPHSNormalTextColor" format="color" />
+        <attr name="mPHSCurrentTextColor" format="color" />
+        <attr name="mPHSLineColor" format="color" />
+        <attr name="mPHSLineDrawable" format="reference" />
+
+        <attr name="mPHSLineSize" format="dimension" />
+        <attr name="mPHSTextSize" format="dimension" />
+        <attr name="mPHSCurrentTextSize" format="dimension" />
+        <attr name="mPHSPaddingLR" format="dimension" />
+        <attr name="mPHSLineWidth" format="dimension" />
+        <attr name="mPHSIsFlow" format="boolean" />
+        <attr name="mPHSLinePaddingB" format="dimension" />
+
+        <attr name="mPHSPartitionType">
+            <enum name="auto" value="0" />
+            <enum name="equally" value="1" />
+            <enum name="full" value="2" />
+            <enum name="equivalent" value="3" />
+        </attr>
+    </declare-styleable>
+
+</resources>
