@@ -124,6 +124,8 @@ public class PagerHeadStrip extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         mWidth = MeasureSpec.getSize(widthMeasureSpec);
+        moveX = 0;
+        move(getStartX(mCurrentPosition));
     }
 
     @Override
@@ -144,8 +146,6 @@ public class PagerHeadStrip extends View {
         if (mAdapter != null) {
             mAdapter.registerDataSetObserver(mPagerListener);
         }
-        moveX = 0;
-        move(getStartX(mCurrentPosition));
     }
 
     @Override
@@ -241,6 +241,9 @@ public class PagerHeadStrip extends View {
      * @return 宽
      */
     private int getItemWidth(int position) {
+        if(mAdapter==null||mAdapter.getCount()==0){
+            return 0;
+        }
         if (mMaxItemWidth == 0) {
             initWidth();
         }
@@ -383,6 +386,9 @@ public class PagerHeadStrip extends View {
      * @param x 移动的距离
      */
     private void move(int x) {
+        if(mAdapter==null){
+            return;
+        }
         int maxMoveX = getStartX(mAdapter.getCount() - 1) + getItemWidth(mAdapter.getCount() - 1) - getWidth();
         maxMoveX = maxMoveX > 0 ? maxMoveX : 0;
         moveX = moveX + x;

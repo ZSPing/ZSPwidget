@@ -33,8 +33,8 @@ public class PagerTitleActivity extends BaseActivity {
         mPager = findViewById(R.id.pager_title_view_pager);
 //        mTitleView = findViewById(R.id.pager_title_pager_title);
         adapter1=new MyPagerAdapter(getTitle(10));
-        adapter2=new MyPagerAdapter(getTitle(3));
-        mPager.setAdapter(adapter1);
+        adapter2=new MyPagerAdapter(getTitle(2));
+//        mPager.setAdapter(adapter1);
 
 
     }
